@@ -1,0 +1,17 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container1, #container2, #container3, #container4, #container5, #container6, #container7, #container8, 
+#container9, #container10, #container11, #container12, #container13, #container14, #container15, #container16 {
+    background-color: bisque;
+    display: flex;
+}
+
+#square1, #square2, #square3, #square4, #square5, #square6, #square7, #square8,
+#square9, #square10, #square11, #square12, #square13, #square14, #square15, #square16 {
+    border: 1px solid black;
+    padding: 20px;
+}
