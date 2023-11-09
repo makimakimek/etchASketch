@@ -6,7 +6,7 @@
 
 #container1, #container2, #container3, #container4, #container5, #container6, #container7, #container8, 
 #container9, #container10, #container11, #container12, #container13, #container14, #container15, #container16 {
-    background-color: bisque;
+    background-color: white;
     display: flex;
 }
 

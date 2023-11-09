@@ -1,4 +1,4 @@
-function divCreation() {
+function gridCreation() {
     const container = document.querySelector('#container');
 
     counter = 0;
@@ -14,9 +14,17 @@ function divCreation() {
             const square = document.createElement('div');
             let squareName = `square${counter}`;
             square.setAttribute('id', squareName);
-            groupSquareContainer.appendChild(square);          
+            groupSquareContainer.appendChild(square);
+            
+            square.addEventListener("mouseover", (event) => {
+                event.target.style.backgroundColor = "black";
+            });
+
+            square.addEventListener("mouseout", (event) => {
+                event.target.style.backgroundColor = "white";
+            });
         }
-    }    
+    }
 }
 
-divCreation();
+gridCreation();
