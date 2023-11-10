@@ -18,9 +18,18 @@ function gridCreation(userAnswer) {
             square.setAttribute('id', squareName);
             groupSquareContainer.appendChild(square);
 
+            const colorPickerDiv = document.querySelector('#colorPickerDiv');
             const randomColorButton = document.querySelector('#randomColorButton');
             const shadingButton = document.querySelector('#shadingButton');
             const clearButton = document.querySelector('#clearButton');
+
+            colorPickerDiv.addEventListener("change", (event) => {
+                color = event.target.value;
+
+                square.addEventListener("mouseover", (event) => {
+                    event.target.style.backgroundColor = color;
+                });
+            });
 
             randomColorButton.addEventListener("click", () => {
                 square.addEventListener("mouseover", (event) => {
@@ -37,21 +46,16 @@ function gridCreation(userAnswer) {
 
             shadingButton.addEventListener("click", () => {
                 square.addEventListener("mouseover", (event) => {
-                    shadingAmount = shadingAmount - 10;
-                    event.target.style.backgroundColor = "gray";
-                    
+                    event.target.style.backgroundColor = color;
                     brightnessValue = `brightness(${shadingAmount}%)`;
                     event.target.style.filter = brightnessValue;
+                    shadingAmount = shadingAmount - 10;
                 });
             });
             
             clearButton.addEventListener("click", () => {
                 square.style.backgroundColor = "white";
             });
-
-            /*square.addEventListener("mouseover", (event) => {
-                //event.target.filter = "brightness(%10)";
-            });*/
         }
     }
 }
