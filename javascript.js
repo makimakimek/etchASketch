@@ -23,6 +23,9 @@ function gridCreation(userAnswer) {
             const shadingButton = document.querySelector('#shadingButton');
             const clearButton = document.querySelector('#clearButton');
 
+            let shadingAmount = 100;
+            let brightnessValue;
+
             colorPickerDiv.addEventListener("change", (event) => {
                 color = event.target.value;
 
@@ -41,9 +44,6 @@ function gridCreation(userAnswer) {
                 event.target.style.backgroundColor = color;
             });
 
-            let shadingAmount = 100;
-            let brightnessValue;
-
             shadingButton.addEventListener("click", () => {
                 square.addEventListener("mouseover", (event) => {
                     event.target.style.backgroundColor = color;
@@ -54,6 +54,9 @@ function gridCreation(userAnswer) {
             });
             
             clearButton.addEventListener("click", () => {
+                shadingAmount = 100;
+                brightnessValue = `brightness(${shadingAmount}%)`;
+                square.style.filter = brightnessValue;
                 square.style.backgroundColor = "white";
             });
         }
