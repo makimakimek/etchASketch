@@ -18,15 +18,15 @@ function gridCreation(userAnswer) {
             square.setAttribute('id', squareName);
             groupSquareContainer.appendChild(square);
 
-            const colorPickerDiv = document.querySelector('#colorPickerDiv');
+            const colorPicker = document.querySelector('#colorPicker');
             const randomColorButton = document.querySelector('#randomColorButton');
             const shadingButton = document.querySelector('#shadingButton');
             const clearButton = document.querySelector('#clearButton');
 
-            let shadingAmount = 100;
+            let shadingAmount;
             let brightnessValue;
 
-            colorPickerDiv.addEventListener("change", (event) => {
+            colorPicker.addEventListener("change", (event) => {
                 color = event.target.value;
 
                 square.addEventListener("mouseover", (event) => {
@@ -45,11 +45,14 @@ function gridCreation(userAnswer) {
             });
 
             shadingButton.addEventListener("click", () => {
+                shadingAmount = 100;
                 square.addEventListener("mouseover", (event) => {
-                    event.target.style.backgroundColor = color;
                     brightnessValue = `brightness(${shadingAmount}%)`;
-                    event.target.style.filter = brightnessValue;
+                    event.target.style.filter = brightnessValue;                   
+                    event.target.style.backgroundColor = color;
+                    
                     shadingAmount = shadingAmount - 10;
+                    
                 });
             });
             
@@ -64,7 +67,7 @@ function gridCreation(userAnswer) {
 }
 
 function newGrid() {
-    const gridButton = document.querySelector('#button');
+    const gridButton = document.querySelector('#newGridButton');
     let userAnswer = 16;
     gridCreation(userAnswer);
 

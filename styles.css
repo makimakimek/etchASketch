@@ -1,5 +1,26 @@
 #page {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-size: 50px;
+    margin: 20px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+#buttons > div > button, input {
+    margin: 3px;
+}
+
+#titleAndGame {
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
