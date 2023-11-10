@@ -19,6 +19,7 @@ function gridCreation(userAnswer) {
             groupSquareContainer.appendChild(square);
 
             const randomColorButton = document.querySelector('#randomColorButton');
+            const clearButton = document.querySelector('#clearButton');
 
             randomColorButton.addEventListener("click", () => {
                 square.addEventListener("mouseover", (event) => {
@@ -30,6 +31,9 @@ function gridCreation(userAnswer) {
                 event.target.style.backgroundColor = color;
             });
             
+            clearButton.addEventListener("click", () => {
+                square.style.backgroundColor = "white";
+            });
 
             /*square.addEventListener("mouseover", (event) => {
                 //event.target.filter = "brightness(%10)";
