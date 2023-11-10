@@ -2,6 +2,8 @@ function gridCreation(userAnswer) {
     const container = document.querySelector('#container');
 
     let counter = 0;
+
+    let color = "black";
     
     for(let i = 0; i < userAnswer; i++) {
         counter++;
@@ -15,13 +17,22 @@ function gridCreation(userAnswer) {
             let squareName = `square${counter}`;
             square.setAttribute('id', squareName);
             groupSquareContainer.appendChild(square);
-            
-            square.addEventListener("mouseover", (event) => {
-                event.target.style.backgroundColor = "black";
+
+            const randomColorButton = document.querySelector('#randomColorButton');
+
+            randomColorButton.addEventListener("click", () => {
+                square.addEventListener("mouseover", (event) => {
+                    event.target.style.backgroundColor = `${randomColorValues()}`;
+                });
             });
 
-            /*square.addEventListener("mouseout", (event) => {
-                event.target.style.backgroundColor = "white";
+            square.addEventListener("mouseover", (event) => {
+                event.target.style.backgroundColor = color;
+            });
+            
+
+            /*square.addEventListener("mouseover", (event) => {
+                //event.target.filter = "brightness(%10)";
             });*/
         }
     }
@@ -55,6 +66,20 @@ function newGrid() {
         
         gridCreation(userAnswer);
     });
+}
+
+function randomColorValues() {
+    let randomColorRValue;
+    let randomColorGValue;
+    let randomColorBValue;
+    let randomColorRGBValue;
+
+    randomColorRValue = Math.floor(Math.random() * 256);
+    randomColorGValue = Math.floor(Math.random() * 256);
+    randomColorBValue = Math.floor(Math.random() * 256);
+
+    randomColorRGBValue = `rgb(${randomColorRValue}, ${randomColorGValue}, ${randomColorBValue})`;
+    return randomColorRGBValue;
 }
 
 newGrid();
