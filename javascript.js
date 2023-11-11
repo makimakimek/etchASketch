@@ -34,10 +34,26 @@ function gridCreation(userAnswer) {
                 });
             });
 
+            colorPicker.addEventListener("mouseover", (event) => {
+                event.target.style.opacity = "1";
+            });
+
+            colorPicker.addEventListener("mouseout", (event) => {
+                event.target.style.opacity = "0.7";
+            });
+
             randomColorButton.addEventListener("click", () => {
                 square.addEventListener("mouseover", (event) => {
                     event.target.style.backgroundColor = `${randomColorValues()}`;
                 });
+            });
+
+            randomColorButton.addEventListener("mouseover", (event) => {
+                event.target.style.opacity = "1";
+            });
+
+            randomColorButton.addEventListener("mouseout", (event) => {
+                event.target.style.opacity = "0.7";
             });
 
             square.addEventListener("mouseover", (event) => {
@@ -56,11 +72,27 @@ function gridCreation(userAnswer) {
                 });
             });
             
+            shadingButton.addEventListener("mouseover", (event) => {
+                event.target.style.opacity = "1";
+            });
+
+            shadingButton.addEventListener("mouseout", (event) => {
+                event.target.style.opacity = "0.7";
+            });
+
             clearButton.addEventListener("click", () => {
                 shadingAmount = 100;
                 brightnessValue = `brightness(${shadingAmount}%)`;
                 square.style.filter = brightnessValue;
                 square.style.backgroundColor = "white";
+            });
+
+            clearButton.addEventListener("mouseover", (event) => {
+                event.target.style.opacity = "1";
+            });
+
+            clearButton.addEventListener("mouseout", (event) => {
+                event.target.style.opacity = "0.7";
             });
         }
     }
@@ -93,6 +125,14 @@ function newGrid() {
         }
         
         gridCreation(userAnswer);
+    });
+
+    gridButton.addEventListener("mouseover", (event) => {
+        event.target.style.opacity = "1";
+    });
+
+    gridButton.addEventListener("mouseout", (event) => {
+        event.target.style.opacity = "0.7";
     });
 }
 

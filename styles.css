@@ -1,6 +1,5 @@
 #page {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -12,17 +11,33 @@
 #buttons {
     display: flex;
     flex-direction: column;
-    margin: 40px;
+    flex: 1 1 0%;
+    align-items: flex-end;
+    margin-top: 100px; 
 }
 
 #buttons > div > button, input {
     margin: 3px;
+    color: white;
+    background-color: #4F97A3;
+    border-radius: 5px;
+    width: 100px;
+    height: 60px;
+    border: 1px solid #4F97A3;
+    font-size: 20px;
+    opacity: 0.7;
 }
 
 #titleAndGame {
     display: flex;
     flex-direction: column;
+    flex: 2 1 0%;
     align-items: center;
+}
+
+#blankDiv {
+    display: flex;
+    flex: 1 1 0%;
 }
 
 #container {
